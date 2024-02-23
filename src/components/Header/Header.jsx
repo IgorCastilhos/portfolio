@@ -25,9 +25,9 @@ export const Header = () => {
           <ul
               style={getMenuStyles(menuOpened)}
               className={`flexCenter ${css.menu}`}>
-            <li><a href="">Serviços</a></li>
-            <li><a href="">Experiência</a></li>
-            <li><a href="">Portfólio</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Experience</a></li>
+            <li><a href="">Portfolio</a></li>
             <li className={`flexCenter ${css.phone}`}>
               <p>+55 (51) 99630-2909</p>
               <BiPhoneCall size={"40px"}/>
