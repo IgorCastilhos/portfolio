@@ -5,7 +5,7 @@ import {Work} from "./components/Work/Work.jsx";
 import {Footer} from "./components/Footer/Footer.jsx";
 import css from './styles/app.module.scss'
 
-const App = () => {
+export const App = () => {
   return <div className={`bg-primary ${css.container}`}>
     <Header/>
     <Hero/>
@@ -15,4 +15,3 @@ const App = () => {
   </div>
 };
 
-export default App;
