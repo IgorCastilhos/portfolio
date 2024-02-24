@@ -27,15 +27,11 @@ export const Footer = () => {
 
           <div className={css.right}>
             <div className={css.info}>
-              <span className="secondaryText">Information</span>
-              <p>340 Porto Alegre, RS, BRAZIL</p>
+              <span className="secondaryText">Location</span>
+              <p>340 Porto Alegre, RS, Brazil</p>
             </div>
-            <ul className={css.menu}>
-              <li>Services</li>
-              <li>Works</li>
-              <li>Notes</li>
-              <li>Experience</li>
-            </ul>
+              <ul className={css.menu}>
+              </ul>
           </div>
         </motion.div>
       </motion.section>

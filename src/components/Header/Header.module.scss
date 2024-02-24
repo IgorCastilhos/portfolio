@@ -37,7 +37,7 @@
         align-items: flex-start;
         padding: 3rem;
         justify-content: flex-end;
-        box-shadow: 0 4px 4px rgba(0,0,0,0.05);
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
       }
       text-transform: uppercase;
       font-size: 1rem;
@@ -62,12 +62,21 @@
 
         svg {
           color: $secondary;
+          background-color: white;
           padding: 10px;
-          background: white;
           border-radius: 999px;
           box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
         }
       }
+    }
+
+    .menuIcon {
+
+      @media (max-width: $sm),
+      (max-width: $md) {
+        display: block;
+      }
+      display: none;
     }
   }
 }

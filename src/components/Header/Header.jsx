@@ -1,46 +1,58 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import css from "./Header.module.scss";
 import {BiMenuAltRight, BiPhoneCall} from "react-icons/bi";
-import {m, motion} from "framer-motion";
+import {motion} from "framer-motion";
 import {getMenuStyles, headerVariants} from "../../utils/motion.js";
 import useHeaderShadow from "../../hooks/useHeaderShadow.jsx";
+import useOutsideAlerter from "../../hooks/useOutsideAlerter.jsx";
 
-// initial: hidden state
-// whileInView: show state
-// viewport: shows the animation only once
 export const Header = () => {
-  const [menuOpened, setMenuOpened] = useState(false);
-  const headerShadow = useHeaderShadow()
-  return (
-      <motion.div
-          initial="hidden"
-          whileInView="show"
-          variants={headerVariants}
-          viewport={{once: false, amount: 0.25}}
-          className={`paddings ${css.wrapper}`}
-          style={{boxShadow: headerShadow}}
-      >
-        <div className={`innerWidth ${css.container} flexCenter `}>
-          <div className={css.name}>Igor</div>
-          <ul
-              style={getMenuStyles(menuOpened)}
-              className={`flexCenter ${css.menu}`}>
-            <li><a href="">Services</a></li>
-            <li><a href="">Experience</a></li>
-            <li><a href="">Portfolio</a></li>
-            <li className={`flexCenter ${css.phone}`}>
-              <p>+55 (51) 99630-2909</p>
-              <BiPhoneCall size={"40px"}/>
-            </li>
-          </ul>
-          {/* for medium and small screens */}
-          <div className={css.menuIcon}
-               onClick={() => setMenuOpened((prev) => !prev)}
-          >
-            <BiMenuAltRight size={30}/>
-          </div>
+    const menuRef = useRef(null);
+    const [menuOpened, setMenuOpened] = useState(false);
+    const headerShadow = useHeaderShadow();
 
-        </div>
-      </motion.div>);
+    // Handle click outside of sidebar on mobile
+    useOutsideAlerter({
+        menuRef,
+        setMenuOpened
+    });
+
+    // initial: hidden state
+    // whileInView: show state
+    // viewport: shows the animation only once
+    return (
+        <motion.div
+            variants={headerVariants}
+            initial="hidden"
+            whileInView="show"
+            className={`bg-primary paddings ${css.wrapper}`}
+            viewport={{once: true, amount: 0.25}}
+            style={{boxShadow: headerShadow}}
+        >
+            <div className={`innerWidth ${css.container} flexCenter`}>
+                <div className={css.name}>Igor</div>
+                <ul
+                    className={`flexCenter ${css.menu}`}
+                    ref={menuRef}
+                    style={getMenuStyles(menuOpened)}
+                >
+                    <li><a href="#experiences">Services</a></li>
+                    <li><a href="#work">Experience</a></li>
+                    <li><a href="https://github.com/IgorCastilhos" target="_blank">Portfolio</a></li>
+                    <li className={`flexCenter ${css.phone}`}>
+                        <a href="tel:+5551996302909">+55 51 99630-2909</a>
+                        <BiPhoneCall size={"40px"}/>
+                    </li>
+                </ul>
+
+                {/* for medium and small screens */}
+                <div
+                    className={css.menuIcon}
+                    onClick={() => setMenuOpened((prev) => !prev)}
+                >
+                    <BiMenuAltRight size={30}/>
+                </div>
+            </div>
+        </motion.div>
+    );
 };
-

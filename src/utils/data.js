@@ -9,10 +9,16 @@ export const projectExperience = [
     icon: HiOutlineDesktopComputer,
     bg: "#286F6C"
   },
+    {
+        name: "Courses",
+        projects: 20,
+        icon: MdWorkspacesOutline,
+        bg: "#F26440",
+    },
 ];
 
 export const WhatDoIHelp = [
-  "Passionate about technology and innovation, I am an Information Systems student with 2 years of hands-on experience in full stack development, specializing in React, Node.js, Go, and Java. Committed to turning complex ideas into efficient digital solutions."
+  "Passionate about technology and innovation, I am an Information Systems student with 2 years of hands-on experience in full stack development, specializing in React, Node.js, Go, and Java.", "I'm committed to turning complex ideas into efficient solutions.",
 ];
 
 export const workExp = [
@@ -21,22 +27,16 @@ export const workExp = [
     tenure: "Jun 2019 - Dec 2019",
     role: "Internship",
     detail:
-        "A visual desginer dsesign for a variety of platoforms, may include internet and internet sites, games, movies, kioasks and wearbies. In short, they create the concepts"
+        "Provided public services, updated data in the bank system, assisted in self-service areas, facilitated financial transactions via Internet Banking, contacted and served clients through various communication channels, and digitized and organized documents."
   },
   {
-    place: "New Man Services",
-    tenure: "Aug 2014 - Sep 2016",
-    role: "UI/UX Designer",
+    place: "Guerra Propriedade Intelectual",
+    tenure: "Jan 2019 - Mar 2019",
+    role: "Internship",
     detail:
-        "A visual desginer dsesign for a variety of platoforms, may include internet and internet sites, games, movies, kioasks and wearbies. In short, they create the concepts"
+        "Received and sent financial and billing notes, billing notifications and pending issues. Additionally, I practiced the English language sending emails to international clients."
   },
-  {
-    place: "Global Solution",
-    tenure: "Aug 2014 - Sep 2016",
-    role: "Sr. Product Designer",
-    detail:
-        "A visual desginer dsesign for a variety of platoforms, may include internet and internet sites, games, movies, kioasks and wearbies. In short, they create the concepts"
-  }
+
 ];
 
 export const comments = [
